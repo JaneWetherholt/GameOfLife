@@ -53,11 +53,13 @@ public class GameConfiguratorTest {
         GameConfigurator configurator = new GameConfigurator();
         configurator.createGameBoard();
 
-        String expectedOutput = "To create a game board, please input the number of rows you'd like your game board to have.\r\n" +
-                "Next, please input the number of columns you'd like to have on your game board.\r\n" +
-                "(1/3) Please enter a series of 3 live cells and dead cells\r\n" +
-                "(2/3) Please enter a series of 3 live cells and dead cells\r\n" +
-                "(3/3) Please enter a series of 3 live cells and dead cells\r\n";
+        String expectedOutput = """
+                To create a game board, please input the number of rows you'd like your game board to have.\r
+                Next, please input the number of columns you'd like to have on your game board.\r
+                (1/3) Please enter a series of 3 live cells and dead cells\r
+                (2/3) Please enter a series of 3 live cells and dead cells\r
+                (3/3) Please enter a series of 3 live cells and dead cells\r
+                """;
 
         Assertions.assertEquals(expectedOutput, outputStream.toString());
     }
@@ -72,12 +74,14 @@ public class GameConfiguratorTest {
         System.setOut(new PrintStream(outputStream));
         configurator.createGameBoard();
 
-        String expectedOutput = "To create a game board, please input the number of rows you'd like your game board to have.\r\n" +
-                "Next, please input the number of columns you'd like to have on your game board.\r\n" +
-                "(1/3) Please enter a series of 3 live cells and dead cells\r\n" +
-                "(2/3) Please enter a series of 3 live cells and dead cells\r\n" +
-                "Invalid input. Please enter only 1s and 0s.\r\n" +
-                "(3/3) Please enter a series of 3 live cells and dead cells\r\n";
+        String expectedOutput = """
+                To create a game board, please input the number of rows you'd like your game board to have.\r
+                Next, please input the number of columns you'd like to have on your game board.\r
+                (1/3) Please enter a series of 3 live cells and dead cells\r
+                (2/3) Please enter a series of 3 live cells and dead cells\r
+                Invalid input. Please enter only 1s and 0s.\r
+                (3/3) Please enter a series of 3 live cells and dead cells\r
+                """;
         Assertions.assertEquals(expectedOutput, outputStream.toString());
     }
 }

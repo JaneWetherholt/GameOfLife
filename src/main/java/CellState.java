@@ -4,7 +4,7 @@ public enum CellState {
 
     public final int value;
 
-    private CellState(int value) {
+    CellState(int value) {
         this.value = value;
     }
 }

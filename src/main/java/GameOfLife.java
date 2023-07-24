@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class GameOfLife {
     public static void main(String[] args) {
 //        create print into method and move the following six lines to that method

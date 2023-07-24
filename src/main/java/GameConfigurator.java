@@ -22,9 +22,7 @@ public class GameConfigurator {
             System.out.println("Whoops! Your input must be equal to or higher than 2 to play!");
             userInput = scanner.nextInt();
         }
-        int updatedInput = userInput;
-
-        return updatedInput;
+        return userInput;
     }
 
     private int[][] populateGameBoard(int rowAmount, int columnAmount) {

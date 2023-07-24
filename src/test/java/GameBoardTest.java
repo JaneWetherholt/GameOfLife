@@ -61,9 +61,11 @@ public class GameBoardTest {
         GameBoard gameBoard = new GameBoard(boardData);
         gameBoard.printBoard();
 
-        String expectedOutput = "1 0 1 \r\n" +
-                "0 1 0 \r\n" +
-                "1 0 1 \r\n";
+        String expectedOutput = """
+                1 0 1 \r
+                0 1 0 \r
+                1 0 1 \r
+                """;
         Assertions.assertEquals(expectedOutput, outputStream.toString());
 
         System.setOut(System.out);

@@ -32,6 +32,7 @@ application as simple as possible to use. I could add a React user interface at 
 but this is the minimum viable product I was working towards.
 
 Installation and running should be fairly straightforward. All this application requires is
-cloning the code from the repository, building the project, and running the application. No 
-other dependencies should need to be added. Once the application is running, the user should
-simply follow the console prompts.
+cloning the code from the repository, opening a console terminal, navigating into the 
+project's directory and into the `src/main/java` folder. Once there, run the command 
+`java GameOfLife.java ` and the application will run. No other dependencies should need 
+to be added. Once the application is running, the user should simply follow the console prompts.

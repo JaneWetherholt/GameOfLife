@@ -25,8 +25,7 @@ to enter input to build an 8 x 6 player board.
 Once the board is built, the application will evaluate each cell of the board to determine 
 the next state of the board and print that next state to the console.
 
-##Requirements, Features, and Algorithm and Design Choice
-• Highlights the requirements and additional features that were implemented.
+##Requirements 
 
 The main requirements were fairly straightforward: the initial program should accept and 8x6 
 grid and that grid would be evaluated based on the rules of Conway's Game of Life and output
@@ -34,15 +33,23 @@ the next state. The application should be designed based on Object Oriented Prog
 and should utilise test driven development with JUnit tests. A fancy user interface wasn't 
 required, but the program should be easy and intuitive and not require extensive set up.
 
-• A brief discussion of your algorithm and design choice.
+## Algorithm and Design Choice
 
 I started by simply solving the Game of Life LeetCode problem. I figured that would give me a 
 baseline of what the solution could be at bare minimum and I could start to see how to design
-the application around the solution. Once I had that down, I fleshed out the steps of the game
+the application around the solution. 
+
+The solution is fairly straightforward: it involves looping through the matrix input and performing
+a set of calculations on each cell. Part of the trick of this problem is figuring out where the 
+looping occurs and how to abstract some of the looping away into separate methods to keep everyting
+organized.
+
+Once I had that down, I fleshed out the steps of the game
 from the user's perspective; what input would be required of the user and how the application could
 work around that. The GameBoardEvaluator class came first, since most of the LeetCode solution
 revolved around the actual evaluation of the GameBoard. Then I wrote the
 GameBoard class to set up its attributes and a method to print the board.
+
 As I started to flesh out those two classes, I realized I needed a third class
 to actually build the GameBoard and validate the values that were going into it.
 The Evaluator cared to a point what the values were, and originally I had an exception to handle
@@ -50,6 +57,18 @@ invalid boards there, but in order to keep the game from crashing entirely at th
 I decided it would be better to have the user input validated in real time than at the end
 of the game. It makes more sense to validate the input before you build the GameBoard
 rather than waiting all the way until the end to do it.
+
+## Extra Features
+There were some extra feature that were outlined as optional. I decided to focus on supporting a
+grid of any size, since my original solution was already written to do that. However, this meant
+I needed to be aware of some edge cases, like a user putting in 0 rows and 0 columns, or even 1
+row and 1 column. I decided that this extra feature would start at a minimum of 2 for each, since
+the logic presupposed that there were cells and neighbors to evaluate in the first place.
+
+An additional feature I would like to add is the ability to loop through states, but I was simply 
+running out of time. I'd also like to design a fancier user interface that perhaps provides a more 
+visually pleasing version of the game, perhaps showing the cells populate; then when the new
+state is printed, have a nice visual transition between the old board and the new board.
 
 ## Application Tech and Installation
 
